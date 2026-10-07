@@ -9,6 +9,8 @@ export async function getAuthorById(req, res) {
         throw new CustomNotFoundError("Author not found.");
     }
 
+    res.send(`Author Name: ${author.name}`);
+
     //try {
     //    if (!author) {
     //        res.status(404).send("Author not found.");

@@ -7,3 +7,13 @@ const authors = [
 export async function getAuthorById(authorId) {
     return authors.find((author) => author.id === authorId);
 };
+
+const books = [
+    { id: 1, title: "The Lord of the Rings" },
+    { id: 2, title: "The Hobbit" },
+    { id: 3, title: "The Silmarillion" },
+];
+
+export async function getBookById(bookId) {
+    return books.find((book) => book.id === bookId);
+};

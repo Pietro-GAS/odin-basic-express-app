@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   console.error(err);
   // We can specify the `err.statusCode` that exists in our custom error class and if it does not exist it's probably an internal server error
-  res.status(err.statusCode || 500).send(err);
+  res.status(err.statusCode || 500).send(`Error ${err.statusCode}: ${err.message}`);
 });
 
 const PORT = process.env.PORT || 3000;
