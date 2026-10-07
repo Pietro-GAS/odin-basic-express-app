@@ -2,8 +2,13 @@ import express from "express";
 import { authorRouter } from "./routes/authorRouter.js";
 import { bookRouter } from "./routes/bookRouter.js";
 import { indexRouter } from "./routes/indexRouter.js";
+import { path } from "node:path";
 
 const app = express();
+
+// enable ejs as view engine
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
