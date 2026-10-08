@@ -9,21 +9,15 @@ export async function getAuthorById(req, res) {
         throw new CustomNotFoundError("Author not found.");
     }
 
-    //res.send(`Author Name: ${author.name}`);
     res.render("authors/authorInfo", { author: author });
+};
 
-    //try {
-    //    if (!author) {
-    //        res.status(404).send("Author not found.");
-    //        return;
-    //    }
-    //    
-    //    res.send(`Author name: ${author.name}`);
-    //} catch (error) {
-    //    console.log("Error retrieving author:", error);
-    //    res.status(500).send("Internal Server Error.");
-    //    // or we can call `next(error)` instead of sending a response here.
-    //    // Using `next(error)` will only render an error page in the express' default view and respond with the whole html to the client.
-    //    // So we will need to create a special type of middleware function if we want a different response.
-    //}
+export async function getAllAuthors(req, res) {
+    const authors = await db.getAllAuthors();
+
+    if (!authors) {
+        throw new CustomNotFoundError("Author list not found");
+    }
+
+    res.render("authors/authorList", { authors: authors});
 };

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Authors</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Authors</h1>
+            <p>List of authors currently in database:</p>
+            <ul>
+                <% authors.forEach((author) => { %>
+                    <%- include("author", { author: author }); %>
+                <% }); %>
+            </ul>
+        </main>
+        <%- include('../components/footer') %>
+    </body>
+</html>

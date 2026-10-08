@@ -12,6 +12,16 @@ export async function getBookById(req, res) {
     res.render("books/bookInfo", { book: book });
 };
 
+export async function getAllBooks(req, res) {
+    const books = await db.getAllBooks();
+
+    if (!books) {
+        throw new CustomNotFoundError("Book list not found");
+    }
+
+    res.render("books/bookList", { books: books});
+}
+
 export async function reserveBookById(req, res) {
     const { bookId } = req.params;
     const book = await db.getBookById(Number(bookId));

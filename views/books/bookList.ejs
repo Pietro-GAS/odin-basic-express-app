@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Books</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Books</h1>
+            <p>List of books currently in inventory:</p>
+            <ul>
+                <% books.forEach((book) => { %>
+                    <%- include("book", { book: book }); %>
+                <% }); %>
+            </ul>
+        </main>
+        <%- include('../components/footer') %>
+    </body>
+</html>

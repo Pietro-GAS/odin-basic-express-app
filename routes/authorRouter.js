@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getAuthorById } from "../controllers/authorController.js";
+import { getAuthorById, getAllAuthors } from "../controllers/authorController.js";
 
 export const authorRouter = Router();
-authorRouter.get("/", (req, res) => { res.send("All authors."); });
+authorRouter.get("/", getAllAuthors);
 authorRouter.get("/:authorId", getAuthorById);
