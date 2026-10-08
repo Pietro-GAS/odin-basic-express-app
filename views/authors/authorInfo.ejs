@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title><%= author.name %></title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Book Info</h1>
+        <ul>
+            <li><strong>ID: </strong><%= author.id %></li>
+            <li><strong>Name: </strong><%= author.name %></li>
+        </ul>
+        </main>
+        <%- include('../components/footer') %>
+    </body>
+</html>

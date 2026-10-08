@@ -9,7 +9,7 @@ export async function getBookById(req, res) {
         throw new CustomNotFoundError("Book not found.");
     };
 
-    res.send(`Book Title: ${book.title}`);
+    res.render("books/bookInfo", { book: book });
 };
 
 export async function reserveBookById(req, res) {
