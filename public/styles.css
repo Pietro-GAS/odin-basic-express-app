@@ -10,11 +10,21 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+ul {
+    padding: 20px;
 }
 
 .footer {
     background-color: lightslategray;
     padding: 5px;
     font-size: 0.8rem;
+    justify-self: flex-end;
 }
